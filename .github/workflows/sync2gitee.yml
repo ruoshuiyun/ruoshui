@@ -7,7 +7,7 @@ on:
 jobs:
   repo-sync:
     env:
-      dst_key: ${{ secrets.GITEE_AND_GITHUB_PRIVATE_KEY}}
+      dst_key: ${{ secrets.GITEE_PRIVATE_KEY}}
       dst_token: ${{ secrets.GITEE_TOKEN }}
       gitee_user: ${{ secrets.GITEE_USER }}
     runs-on: ubuntu-latest
@@ -27,7 +27,7 @@ jobs:
           # 使用ssh方式clone，保证原仓的可读性
           clone_style: "ssh"
           # 必选，Gitee公钥对应的私钥，https://gitee.com/profile/sshkeys
-          dst_key: ${{ secrets.GITEE_AND_GITHUB_PRIVATE_KEY  }}
+          dst_key: ${{ secrets.GITEE_PRIVATE_KEY  }}
           # 必选，Gitee对应的用于创建仓库的token，https://gitee.com/profile/personal_access_tokens
           dst_token:  ${{ secrets.GITEE_TOKEN }}
           # 如果是组织，指定组织即可，默认为用户 user
